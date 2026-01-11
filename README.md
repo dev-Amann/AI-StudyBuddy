@@ -24,6 +24,7 @@
 
 ### Frontend
 - **Framework**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Deployment**: Vercel (Static Site)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 - **UI Components**: [Lucide React](https://lucide.dev/), [Framer Motion](https://www.framer.com/motion/)
 - **State/Auth**: [Clerk](https://clerk.com/), Context API
@@ -31,6 +32,7 @@
 
 ### Backend
 - **Framework**: [FastAPI](https://fastapi.tiangolo.com/) (Python 3.8+)
+- **Deployment**: Vercel Serverless Functions (`api/` directory)
 - **Database**: [MongoDB Atlas](https://www.mongodb.com/atlas) (via **Motor** async driver)
 - **AI Engine**: [Groq API](https://groq.com/) (LLaMA 3 8B/70B)
 - **Validation**: Pydantic v2
@@ -41,14 +43,14 @@
 
 ```mermaid
 graph TD
-    User[User] -->|HTTPS| Frontend[React Frontend]
-    Frontend -->|Auth| Clerk[Clerk Auth]
-    Frontend -->|JSON/REST| Backend[FastAPI Backend]
+    User[User] -->|HTTPS| Vercel[Vercel Edge Network]
+    Vercel -->|Static Assets| Frontend[React Frontend]
+    Vercel -->|/api/* Rewrites| Serverless[FastAPI Serverless Function]
     
-    subgraph "Backend Services"
-        Backend -->|Auth Token Check| Clerk
-        Backend -->|Store/Retrieve| DB[(MongoDB Atlas)]
-        Backend -->|LLM Requests| Groq[Groq API]
+    subgraph "Serverless Backend"
+        Serverless -->|Auth Check| Clerk[Clerk Auth]
+        Serverless -->|Data| DB[(MongoDB Atlas)]
+        Serverless -->|AI Inference| Groq[Groq API]
     end
 ```
 
@@ -67,7 +69,7 @@ Follow these steps to set up the project locally.
 
 ### 1. Backend Setup
 
-1.  **Clone the repository** (if you haven't):
+1.  **Clone the repository**:
     ```bash
     git clone <repository-url>
     cd StudyBuddy
@@ -106,7 +108,7 @@ Follow these steps to set up the project locally.
     ```bash
     uvicorn app.main:app --reload
     ```
-    *The backend will start at `http://127.0.0.1:8000`*
+    *The backend will start at `http://127.0.0.1:8000`. Note: Local dev still uses the standard FastAPI app.*
 
 ### 2. Frontend Setup
 
@@ -124,14 +126,28 @@ Follow these steps to set up the project locally.
     Create a `.env.local` file in the `frontend/` directory:
     ```env
     VITE_CLERK_PUBLISHABLE_KEY=pk_test_...
-    VITE_API_URL=http://127.0.0.1:8000/api
+    # Connects to local proxy or Vercel rewrite
+    VITE_API_URL=/api
     ```
 
 4.  **Start the Development Server**:
     ```bash
     npm run dev
     ```
-    *The app will launch at `http://localhost:5173`*
+    *The app will launch at `http://localhost:5173`. API requests to `/api` are proxied to `http://localhost:8000`.*
+
+---
+
+## ☁️ Deployment (Vercel)
+
+This project is configured for **Zero-Config Vercel Deployment**.
+
+1.  Push your code to GitHub.
+2.  Import the project in Vercel.
+3.  **Environment Variables**: Add your backend environment variables (`MONGODB_URI`, `GROQ_API_KEY`, `CLERK_ISSUER_URL`) to the Vercel project settings.
+4.  Deploy! 
+    - Vercel automatically detects the `api` folder and deploys it as a Python Serverless Function.
+    - `vercel.json` handles the build command and API routing.
 
 ---
 
@@ -147,12 +163,6 @@ Follow these steps to set up the project locally.
 ## 🤝 Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
-
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
 
 ---
 
