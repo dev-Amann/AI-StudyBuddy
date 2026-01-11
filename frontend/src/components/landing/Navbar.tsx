@@ -15,7 +15,7 @@ const Navbar = () => {
                     </span>
                 </Link>
                 <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                    <Link to="/sign-in">
+                    <Link to="/dashboard">
                         <button type="button" className="text-white bg-gradient-to-r from-amber-500 to-yellow-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-all hover:shadow-lg hover:shadow-amber-500/30 active:scale-95">
                             Get Started
                         </button>

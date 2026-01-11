@@ -30,12 +30,10 @@ const Hero = () => {
                         <p className="max-w-2xl mb-6 font-light text-slate-600 lg:mb-8 md:text-lg lg:text-xl">
                             Summarize PDFs, generate quizzes, and chat with your personal AI tutor. Join thousands of students boosting their grades with StudyBuddy.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Link to="/sign-in" className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-center text-white bg-amber-500 rounded-lg hover:bg-amber-600 focus:ring-4 focus:ring-amber-300 transition-all hover:scale-105 shadow-lg shadow-amber-500/20">
-                                Start Learning Free
-                                <ArrowRight className="w-5 h-5 ml-2" />
-                            </Link>
-                        </div>
+                        <Link to="/dashboard" className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-center text-white bg-amber-500 rounded-lg hover:bg-amber-600 focus:ring-4 focus:ring-amber-300 transition-all hover:scale-105 shadow-lg shadow-amber-500/20">
+                            Start Learning Free
+                            <ArrowRight className="w-5 h-5 ml-2" />
+                        </Link>
 
                         <div className="mt-8 flex items-center gap-4 text-sm text-slate-500">
                             <div className="flex -space-x-2">
