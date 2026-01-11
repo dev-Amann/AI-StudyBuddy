@@ -41,7 +41,7 @@ function App() {
             <Route path="/privacy" element={<PublicRoute><PrivacyPage /></PublicRoute>} />
             <Route path="/terms" element={<PublicRoute><TermsPage /></PublicRoute>} />
             <Route path="/contact" element={<PublicRoute><ContactPage /></PublicRoute>} />
-            <Route path="/sign-in/*" element={<Navigate to="/dashboard" replace />} />
+
 
             {/* Protected Routes - Moved to /dashboard */}
             <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
