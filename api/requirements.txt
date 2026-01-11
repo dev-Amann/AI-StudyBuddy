@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-dotenv
+motor
+pydantic
+pydantic-settings
+groq
+PyJWT
+cryptography
+requests
+pymongo
+email-validator
+pypdf2
+python-multipart
