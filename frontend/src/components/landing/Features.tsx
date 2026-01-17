@@ -1,9 +1,8 @@
-import React from 'react';
-import { MessageSquare, Zap, Brain, Sparkles, Shield, Globe } from 'lucide-react';
+import { Timer, Zap, Brain, Sparkles, Shield, Globe } from 'lucide-react';
 
 const FeatureCard = ({ icon, title, description, color }: any) => {
     return (
-        <div className="p-8 rounded-2xl bg-white border border-slate-100 hover:border-rose-200 transition-all hover:-translate-y-1 hover:shadow-xl group">
+        <div className="p-8 rounded-2xl bg-white border border-slate-100 hover:border-violet-200 transition-all hover:-translate-y-1 hover:shadow-xl group">
             <div className={`w-14 h-14 rounded-xl ${color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                 {icon}
             </div>
@@ -21,7 +20,7 @@ const Features = () => {
             <div className="max-w-7xl px-4 mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
-                        Everything you need to <span className="text-rose-500">excel</span>
+                        Everything you need to <span className="text-violet-500">excel</span>
                     </h2>
                     <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
                         Stop struggling with manual notes. Let AI handle the heavy lifting while you focus on understanding.
@@ -30,28 +29,28 @@ const Features = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <FeatureCard
-                        icon={<MessageSquare className="w-6 h-6" />}
-                        title="24/7 AI Tutor"
-                        description="Stuck on a problem at 2 AM? Our AI tutor is always awake to explain complex topics."
-                        color="text-blue-600 bg-blue-50"
+                        icon={<Timer className="w-6 h-6" />}
+                        title="Pomodoro Timer"
+                        description="Stay focused with built-in Pomodoro technique. 25-minute focus sessions with breaks to keep you productive."
+                        color="text-violet-600 bg-violet-50"
                     />
                     <FeatureCard
                         icon={<Zap className="w-6 h-6" />}
                         title="Instant PDF Summaries"
                         description="Turn 100-page textbooks into concise study guides in seconds."
-                        color="text-rose-600 bg-rose-50"
+                        color="text-purple-600 bg-purple-50"
                     />
                     <FeatureCard
                         icon={<Brain className="w-6 h-6" />}
                         title="Auto Flashcards"
                         description="Automatically generate flashcards from your notes for spaced repetition learning."
-                        color="text-purple-600 bg-purple-50"
+                        color="text-indigo-600 bg-indigo-50"
                     />
                     <FeatureCard
                         icon={<Sparkles className="w-6 h-6" />}
                         title="Smart Quizzes"
                         description="Test yourself with AI-generated quizzes that adapt to your knowledge gaps."
-                        color="text-pink-600 bg-pink-50"
+                        color="text-fuchsia-600 bg-fuchsia-50"
                     />
                     <FeatureCard
                         icon={<Shield className="w-6 h-6" />}
@@ -72,3 +71,4 @@ const Features = () => {
 };
 
 export default Features;
+

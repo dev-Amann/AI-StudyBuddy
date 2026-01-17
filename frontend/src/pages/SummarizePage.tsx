@@ -50,7 +50,7 @@ export default function SummarizePage() {
         <div className="max-w-3xl mx-auto space-y-8">
             <div className="space-y-2">
                 <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-3">
-                    <FileText className="text-red-500" />
+                    <FileText className="text-purple-500" />
                     PDF Summarizer
                 </h1>
                 <p className="text-slate-500">
@@ -61,7 +61,7 @@ export default function SummarizePage() {
             <div className="grid md:grid-cols-3 gap-6">
                 <div className="md:col-span-1">
                     <div
-                        className="glass-panel p-6 rounded-2xl border-2 border-dashed border-slate-200 hover:border-red-400 bg-white hover:bg-red-50/30 transition-colors cursor-pointer flex flex-col items-center justify-center h-48 text-center"
+                        className="glass-panel p-6 rounded-2xl border-2 border-dashed border-slate-200 hover:border-purple-400 bg-white hover:bg-purple-50/30 transition-colors cursor-pointer flex flex-col items-center justify-center h-48 text-center"
                         onClick={() => fileInputRef.current?.click()}
                     >
                         <input
@@ -74,7 +74,7 @@ export default function SummarizePage() {
 
                         {file ? (
                             <div className="space-y-2">
-                                <FileIcon className="text-red-500 mx-auto" size={32} />
+                                <FileIcon className="text-purple-500 mx-auto" size={32} />
                                 <p className="text-sm font-medium text-slate-700 truncate max-w-[150px]">{file.name}</p>
                                 <p className="text-xs text-slate-400">Change file</p>
                             </div>
@@ -89,7 +89,7 @@ export default function SummarizePage() {
                     <button
                         onClick={handleSummarize}
                         disabled={!file || loading}
-                        className="btn-primary w-full mt-4 bg-gradient-to-r from-red-500 to-rose-500 hover:shadow-red-500/30 disabled:opacity-50"
+                        className="btn-primary w-full mt-4 bg-gradient-to-r from-purple-500 to-violet-500 hover:shadow-purple-500/30 disabled:opacity-50"
                     >
                         {loading ? <Loader2 className="animate-spin mx-auto" size={20} /> : "Summarize"}
                     </button>
@@ -97,7 +97,7 @@ export default function SummarizePage() {
 
                 <div className="md:col-span-2">
                     {error && (
-                        <div className="p-4 bg-red-50 border border-red-100 text-red-600 rounded-xl mb-4">
+                        <div className="p-4 bg-purple-50 border border-purple-100 text-purple-600 rounded-xl mb-4">
                             {error}
                         </div>
                     )}
@@ -106,13 +106,13 @@ export default function SummarizePage() {
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            className="glass-card p-6 rounded-2xl h-full border-red-200 bg-white min-h-[300px]"
+                            className="glass-card p-6 rounded-2xl h-full border-purple-200 bg-white min-h-[300px]"
                         >
-                            <div className="flex items-center gap-2 mb-4 text-red-600 font-medium">
+                            <div className="flex items-center gap-2 mb-4 text-purple-600 font-medium">
                                 <CheckCircle2 size={20} />
                                 Summary Generated
                             </div>
-                            <div className="prose prose-sm max-w-none text-slate-700">
+                            <div className="prose pviolet-sm max-w-none text-slate-700">
                                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                     {summary}
                                 </ReactMarkdown>

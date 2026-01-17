@@ -76,12 +76,12 @@ export default function PomodoroPage() {
         switch (mode) {
             case 'work':
                 return {
-                    bg: 'bg-rose-500',
-                    bgLight: 'bg-rose-100',
-                    text: 'text-rose-600',
-                    border: 'border-rose-200',
-                    ring: 'ring-rose-500/20',
-                    gradient: 'from-rose-500 to-red-500',
+                    bg: 'bg-violet-500',
+                    bgLight: 'bg-violet-100',
+                    text: 'text-violet-600',
+                    border: 'border-violet-200',
+                    ring: 'ring-violet-500/20',
+                    gradient: 'from-violet-500 to-purple-500',
                 }
             case 'shortBreak':
                 return {
@@ -211,12 +211,12 @@ export default function PomodoroPage() {
             {/* Completed Pomodoros */}
             <div className="bg-white rounded-2xl border border-slate-200 p-6 text-center">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                    <CheckCircle size={20} className="text-rose-500" />
+                    <CheckCircle size={20} className="text-violet-500" />
                     <span className="font-semibold text-slate-700">Completed Today</span>
                 </div>
                 <div className="flex justify-center gap-2 flex-wrap">
                     {Array.from({ length: Math.min(completedPomodoros, 12) }).map((_, i) => (
-                        <div key={i} className="w-6 h-6 rounded-full bg-rose-500 flex items-center justify-center">
+                        <div key={i} className="w-6 h-6 rounded-full bg-violet-500 flex items-center justify-center">
                             <CheckCircle size={14} className="text-white" />
                         </div>
                     ))}
@@ -224,7 +224,7 @@ export default function PomodoroPage() {
                         <span className="text-slate-400 text-sm">No pomodoros completed yet. Start focusing!</span>
                     )}
                     {completedPomodoros > 12 && (
-                        <span className="text-rose-600 font-bold">+{completedPomodoros - 12}</span>
+                        <span className="text-violet-600 font-bold">+{completedPomodoros - 12}</span>
                     )}
                 </div>
             </div>
