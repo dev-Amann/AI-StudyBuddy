@@ -5,17 +5,17 @@
 ![Python](https://img.shields.io/badge/Backend-FastAPI-009688)
 ![React](https://img.shields.io/badge/Frontend-React_19-61DAFB)
 
-**StudyBuddy** is a comprehensive AI-powered educational platform designed to enhance the learning experience. By leveraging the power of **Groq's LLaMA 3** models, it offers real-time tutoring, content summarization, quiz generation, and flashcard creation, all wrapped in a modern, responsive interface.
+**StudyBuddy** is a comprehensive AI-powered educational platform designed to enhance the learning experience. By leveraging the power of **Groq's LLaMA 3** models, it offers topic simplification, content summarization, quiz generation, flashcard creation, and a built-in Pomodoro timer—all wrapped in a modern, responsive **Violet-themed** interface.
 
 ---
 
 ## ✨ Key Features
 
-- **🤖 AI Tutor Chat**: Engage in natural, context-aware conversations with an AI study companion.
+- **⏱️ Pomodoro Timer**: Stay focused with the built-in Pomodoro technique timer (25-min work, 5-min break).
 - **📚 Topic Simplifier**: Break down complex subjects into easy-to-understand explanations.
 - **📝 PDF & Text Summarizer**: Instantly extract key insights from documents and long texts.
 - **🎯 Smart Quiz Generator**: Create custom quizzes on any topic to test your knowledge.
-- **🗂️ Flashcard Creator**: Automatically meaningful flashcards for active recall study.
+- **🗂️ Flashcard Creator**: Automatically generate meaningful flashcards for active recall study.
 - **🔐 Secure Authentication**: Integrated with **Clerk** for robust user management.
 
 ---
@@ -25,7 +25,7 @@
 ### Frontend
 - **Framework**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
 - **Deployment**: Vercel (Static Site)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (Violet/Purple Theme)
 - **UI Components**: [Lucide React](https://lucide.dev/), [Framer Motion](https://www.framer.com/motion/)
 - **State/Auth**: [Clerk](https://clerk.com/), Context API
 - **HTTP Client**: Axios
@@ -33,8 +33,7 @@
 ### Backend
 - **Framework**: [FastAPI](https://fastapi.tiangolo.com/) (Python 3.8+)
 - **Deployment**: Vercel Serverless Functions (`api/` directory)
-- **Database**: [MongoDB Atlas](https://www.mongodb.com/atlas) (via **Motor** async driver)
-- **AI Engine**: [Groq API](https://groq.com/) (LLaMA 3 8B/70B)
+- **AI Engine**: [Groq API](https://groq.com/) (LLaMA 3.3 70B)
 - **Validation**: Pydantic v2
 
 ---
@@ -49,7 +48,6 @@ graph TD
     
     subgraph "Serverless Backend"
         Serverless -->|Auth Check| Clerk[Clerk Auth]
-        Serverless -->|Data| DB[(MongoDB Atlas)]
         Serverless -->|AI Inference| Groq[Groq API]
     end
 ```
@@ -63,7 +61,6 @@ Follow these steps to set up the project locally.
 ### Prerequisites
 - **Node.js** (v18+) & **npm**
 - **Python** (v3.10+)
-- **MongoDB Atlas** Account (for connection string)
 - **Groq Cloud** API Key
 - **Clerk** Account (Publishable Key & Issuer URL)
 
@@ -71,7 +68,7 @@ Follow these steps to set up the project locally.
 
 1.  **Clone the repository**:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/dev-Amann/AI-StudyBuddy.git
     cd StudyBuddy
     ```
 
@@ -99,7 +96,6 @@ Follow these steps to set up the project locally.
 5.  **Configure Environment Variables**:
     Create a `.env` file in the `backend/` directory:
     ```env
-    MONGODB_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/?retryWrites=true&w=majority
     GROQ_API_KEY=gsk_...
     CLERK_ISSUER_URL=https://<your-clerk-domain>.clerk.accounts.dev
     ```
@@ -108,7 +104,7 @@ Follow these steps to set up the project locally.
     ```bash
     uvicorn app.main:app --reload
     ```
-    *The backend will start at `http://127.0.0.1:8000`. Note: Local dev still uses the standard FastAPI app.*
+    *The backend will start at `http://127.0.0.1:8000`.*
 
 ### 2. Frontend Setup
 
@@ -126,7 +122,6 @@ Follow these steps to set up the project locally.
     Create a `.env.local` file in the `frontend/` directory:
     ```env
     VITE_CLERK_PUBLISHABLE_KEY=pk_test_...
-    # Connects to local proxy or Vercel rewrite
     VITE_API_URL=/api
     ```
 
@@ -134,7 +129,7 @@ Follow these steps to set up the project locally.
     ```bash
     npm run dev
     ```
-    *The app will launch at `http://localhost:5173`. API requests to `/api` are proxied to `http://localhost:8000`.*
+    *The app will launch at `http://localhost:5173`.*
 
 ---
 
@@ -144,7 +139,7 @@ This project is configured for **Zero-Config Vercel Deployment**.
 
 1.  Push your code to GitHub.
 2.  Import the project in Vercel.
-3.  **Environment Variables**: Add your backend environment variables (`MONGODB_URI`, `GROQ_API_KEY`, `CLERK_ISSUER_URL`) to the Vercel project settings.
+3.  **Environment Variables**: Add your backend environment variables (`GROQ_API_KEY`, `CLERK_ISSUER_URL`) to the Vercel project settings.
 4.  Deploy! 
     - Vercel automatically detects the `api` folder and deploys it as a Python Serverless Function.
     - `vercel.json` handles the build command and API routing.
@@ -155,7 +150,7 @@ This project is configured for **Zero-Config Vercel Deployment**.
 
 1.  **Sign Up/Login**: Create an account using the Clerk-powered authentication page.
 2.  **Dashboard**: Access the main hub to navigate between tools.
-3.  **AI Tutor**: Click "AI Tutor" to start a chat session. Your history is saved automatically.
+3.  **Pomodoro Timer**: Use the timer to manage your study sessions with focus and break intervals.
 4.  **Generators**: Use the "Quiz" or "Flashcards" tools to generate study materials from raw text or topics.
 
 ---
@@ -169,3 +164,4 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 ## 📄 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
