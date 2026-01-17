@@ -36,7 +36,7 @@ export default function ExplainPage() {
         <div className="max-w-3xl mx-auto space-y-8">
             <div className="space-y-2">
                 <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-3">
-                    <BookOpen className="text-amber-500" />
+                    <BookOpen className="text-rose-500" />
                     Explain Topic
                 </h1>
                 <p className="text-slate-500">
@@ -51,12 +51,12 @@ export default function ExplainPage() {
                         value={topic}
                         onChange={(e) => setTopic(e.target.value)}
                         placeholder="E.g., Quantum Physics, Photosynthesis, The French Revolution"
-                        className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500/50 transition-all shadow-sm"
+                        className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500/50 transition-all shadow-sm"
                     />
                     <button
                         type="submit"
                         disabled={loading || !topic}
-                        className="btn-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed from-amber-500 to-yellow-500"
+                        className="btn-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed from-rose-500 to-red-500"
                     >
                         {loading ? <Loader2 className="animate-spin" size={20} /> : <Sparkles size={20} />}
                         Simplifier
@@ -78,7 +78,7 @@ export default function ExplainPage() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="glass-card p-8 rounded-2xl border-amber-200 shadow-xl shadow-amber-500/5 bg-white"
+                    className="glass-card p-8 rounded-2xl border-rose-200 shadow-xl shadow-rose-500/5 bg-white"
                 >
                     <div className="prose prose-slate max-w-none">
                         <div className="prose prose-slate max-w-none text-slate-700">

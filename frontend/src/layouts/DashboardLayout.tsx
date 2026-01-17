@@ -9,11 +9,11 @@ const SidebarItem = ({ icon: Icon, label, to, active }: any) => (
         className={clsx(
             "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group font-medium",
             active
-                ? "bg-amber-50 text-amber-900 border border-amber-200"
-                : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                ? "bg-rose-50 text-rose-900 border border-rose-200"
+                : "text-slate-600 hover:bg-stone-50 hover:text-slate-900"
         )}
     >
-        <Icon size={20} className={clsx("transition-transform group-hover:scale-110", active ? "text-amber-500" : "text-slate-400 group-hover:text-amber-500")} />
+        <Icon size={20} className={clsx("transition-transform group-hover:scale-110", active ? "text-rose-500" : "text-slate-400 group-hover:text-rose-500")} />
         <span>{label}</span>
     </Link>
 )
@@ -33,14 +33,14 @@ export default function DashboardLayout() {
     ]
 
     return (
-        <div className="flex h-screen bg-slate-50 overflow-hidden selection:bg-amber-100 selection:text-amber-900">
+        <div className="flex h-screen bg-stone-50 overflow-hidden selection:bg-rose-100 selection:text-rose-900">
             {/* Sidebar */}
             <aside className="w-72 bg-white border-r border-slate-200 p-6 flex flex-col hidden md:flex z-20 shadow-sm">
                 <div className="flex items-center gap-3 mb-10 px-2">
-                    <div className="p-2 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-lg shadow-lg shadow-yellow-500/20">
+                    <div className="p-2 bg-gradient-to-br from-rose-400 to-red-500 rounded-lg shadow-lg shadow-red-500/20">
                         <Brain className="text-white" size={24} />
                     </div>
-                    <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-yellow-500">
+                    <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-red-500">
                         StudyBuddy
                     </span>
                 </div>
@@ -64,7 +64,7 @@ export default function DashboardLayout() {
                 </nav>
 
                 <div className="pt-6 border-t border-slate-100">
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                    <div className="flex items-center gap-3 p-3 rounded-xl bg-stone-50 border border-slate-100">
                         <UserButton afterSignOutUrl="/sign-in" appearance={{
                             elements: {
                                 avatarBox: "w-10 h-10"
@@ -82,14 +82,14 @@ export default function DashboardLayout() {
             <main className="flex-1 relative overflow-hidden flex flex-col">
                 {/* Background Gradients */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0 opacity-40">
-                    <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-amber-200/20 blur-[100px]" />
-                    <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] rounded-full bg-yellow-200/20 blur-[80px]" />
+                    <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-rose-200/20 blur-[100px]" />
+                    <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] rounded-full bg-red-200/20 blur-[80px]" />
                 </div>
 
                 {/* Mobile Header */}
                 <div className="md:hidden p-4 flex justify-between items-center bg-white/80 border-b border-slate-200 z-10 backdrop-blur-md">
                     <span className="font-bold text-slate-800 flex items-center gap-2">
-                        <Brain className="text-amber-500" size={20} />
+                        <Brain className="text-rose-500" size={20} />
                         StudyBuddy
                     </span>
                     <UserButton />

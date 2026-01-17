@@ -4,7 +4,7 @@ import Footer from '../components/landing/Footer';
 
 const PrivacyPage = () => {
     return (
-        <div className="min-h-screen bg-slate-50 flex flex-col">
+        <div className="min-h-screen bg-stone-50 flex flex-col">
             <Navbar />
             <main className="flex-grow pt-32 pb-20 px-4">
                 <div className="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200">

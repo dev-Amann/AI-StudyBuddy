@@ -8,10 +8,10 @@ const FaqItem = ({ question, answer }: any) => {
         <div className="border border-slate-200 rounded-xl bg-white overflow-hidden">
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="w-full flex justify-between items-center p-5 text-left font-medium text-slate-900 hover:bg-slate-50 transition-colors"
+                className="w-full flex justify-between items-center p-5 text-left font-medium text-slate-900 hover:bg-stone-50 transition-colors"
             >
                 {question}
-                {isOpen ? <ChevronUp className="text-amber-500" /> : <ChevronDown className="text-slate-400" />}
+                {isOpen ? <ChevronUp className="text-rose-500" /> : <ChevronDown className="text-slate-400" />}
             </button>
             <AnimatePresence>
                 {isOpen && (
@@ -33,7 +33,7 @@ const FaqItem = ({ question, answer }: any) => {
 
 const FAQ = () => {
     return (
-        <section className="py-20 bg-slate-50">
+        <section className="py-20 bg-stone-50">
             <div className="max-w-3xl px-4 mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-extrabold text-slate-900">Frequently Asked Questions</h2>

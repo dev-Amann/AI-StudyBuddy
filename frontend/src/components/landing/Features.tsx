@@ -3,7 +3,7 @@ import { MessageSquare, Zap, Brain, Sparkles, Shield, Globe } from 'lucide-react
 
 const FeatureCard = ({ icon, title, description, color }: any) => {
     return (
-        <div className="p-8 rounded-2xl bg-white border border-slate-100 hover:border-amber-200 transition-all hover:-translate-y-1 hover:shadow-xl group">
+        <div className="p-8 rounded-2xl bg-white border border-slate-100 hover:border-rose-200 transition-all hover:-translate-y-1 hover:shadow-xl group">
             <div className={`w-14 h-14 rounded-xl ${color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                 {icon}
             </div>
@@ -21,7 +21,7 @@ const Features = () => {
             <div className="max-w-7xl px-4 mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
-                        Everything you need to <span className="text-amber-500">excel</span>
+                        Everything you need to <span className="text-rose-500">excel</span>
                     </h2>
                     <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
                         Stop struggling with manual notes. Let AI handle the heavy lifting while you focus on understanding.
@@ -39,7 +39,7 @@ const Features = () => {
                         icon={<Zap className="w-6 h-6" />}
                         title="Instant PDF Summaries"
                         description="Turn 100-page textbooks into concise study guides in seconds."
-                        color="text-amber-600 bg-amber-50"
+                        color="text-rose-600 bg-rose-50"
                     />
                     <FeatureCard
                         icon={<Brain className="w-6 h-6" />}

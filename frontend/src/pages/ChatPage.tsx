@@ -119,11 +119,11 @@ export default function ChatPage() {
     return (
         <div className="max-w-6xl mx-auto h-[calc(100vh-8rem)] flex rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white">
             {/* Sidebar */}
-            <div className="w-64 bg-slate-50 border-r border-slate-200 hidden md:flex flex-col">
+            <div className="w-64 bg-stone-50 border-r border-slate-200 hidden md:flex flex-col">
                 <div className="p-4 border-b border-slate-200">
                     <button
                         onClick={createNewChat}
-                        className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-700 hover:bg-amber-50 hover:border-amber-200 hover:text-amber-600 transition-all font-semibold text-sm shadow-sm active:scale-95"
+                        className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-700 hover:bg-rose-50 hover:border-rose-200 hover:text-rose-600 transition-all font-semibold text-sm shadow-sm active:scale-95"
                     >
                         <Plus size={18} />
                         New Chat
@@ -142,13 +142,13 @@ export default function ChatPage() {
                             className={clsx(
                                 "group flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all border",
                                 currentSessionId === session.id
-                                    ? "bg-white border-amber-200 shadow-sm"
+                                    ? "bg-white border-rose-200 shadow-sm"
                                     : "bg-transparent border-transparent hover:bg-white hover:border-slate-100"
                             )}
                         >
                             <MessageSquare size={16} className={clsx(
                                 "shrink-0",
-                                currentSessionId === session.id ? "text-amber-500" : "text-slate-400 group-hover:text-slate-500"
+                                currentSessionId === session.id ? "text-rose-500" : "text-slate-400 group-hover:text-slate-500"
                             )} />
                             <div className="flex-1 min-w-0">
                                 <p className={clsx(
@@ -180,8 +180,8 @@ export default function ChatPage() {
             <div className="flex-1 flex flex-col bg-white">
                 <div className="p-4 border-b border-slate-100 flex items-center justify-between gap-3 bg-white/80 backdrop-blur-sm z-10">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center shadow-inner">
-                            <Bot className="text-amber-600" size={20} />
+                        <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center shadow-inner">
+                            <Bot className="text-rose-600" size={20} />
                         </div>
                         <div>
                             <h2 className="font-bold text-slate-800">AI Tutor</h2>
@@ -196,7 +196,7 @@ export default function ChatPage() {
                 <div className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-thin scrollbar-thumb-slate-300">
                     {messages.length === 0 && (
                         <div className="h-full flex flex-col items-center justify-center text-center space-y-6 opacity-60">
-                            <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center border border-slate-100">
+                            <div className="w-20 h-20 bg-stone-50 rounded-full flex items-center justify-center border border-slate-100">
                                 <Bot size={40} className="text-slate-300" />
                             </div>
                             <div className="max-w-xs">
@@ -218,7 +218,7 @@ export default function ChatPage() {
                         >
                             <div className={clsx(
                                 "w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1 shadow-sm",
-                                msg.role === 'user' ? "bg-amber-500" : "bg-white border border-slate-200"
+                                msg.role === 'user' ? "bg-rose-500" : "bg-white border border-slate-200"
                             )}>
                                 {msg.role === 'user' ? <User size={16} className="text-white" /> : <Bot size={16} className="text-slate-600" />}
                             </div>
@@ -226,8 +226,8 @@ export default function ChatPage() {
                             <div className={clsx(
                                 "p-4 rounded-2xl text-sm leading-relaxed shadow-sm",
                                 msg.role === 'user'
-                                    ? "bg-amber-500 text-white rounded-tr-sm"
-                                    : "bg-slate-50 text-slate-800 rounded-tl-sm border border-slate-100"
+                                    ? "bg-rose-500 text-white rounded-tr-sm"
+                                    : "bg-stone-50 text-slate-800 rounded-tl-sm border border-slate-100"
                             )}>
                                 <div className={clsx("prose prose-sm max-w-none break-words", msg.role === 'user' ? "prose-invert" : "prose-slate")}>
                                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
@@ -259,12 +259,12 @@ export default function ChatPage() {
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             placeholder="Ask your tutor anything..."
-                            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-4 pr-14 py-4 text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all shadow-sm placeholder-slate-400"
+                            className="w-full bg-stone-50 border border-slate-200 rounded-xl pl-4 pr-14 py-4 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rose-500/20 focus:border-rose-500 transition-all shadow-sm placeholder-slate-400"
                         />
                         <button
                             type="submit"
                             disabled={!input || loading}
-                            className="absolute right-2 p-2 bg-amber-500 rounded-lg text-white hover:bg-amber-600 disabled:opacity-50 disabled:bg-slate-300 disabled:cursor-not-allowed transition-all shadow-md active:scale-95"
+                            className="absolute right-2 p-2 bg-rose-500 rounded-lg text-white hover:bg-rose-600 disabled:opacity-50 disabled:bg-slate-300 disabled:cursor-not-allowed transition-all shadow-md active:scale-95"
                         >
                             {loading ? <Loader2 className="animate-spin" size={20} /> : <Send size={20} />}
                         </button>

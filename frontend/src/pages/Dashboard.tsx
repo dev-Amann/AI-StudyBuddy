@@ -9,20 +9,20 @@ const FeatureCard = ({ icon: Icon, title, description, to, color, delay }: any) 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay }}
-            className="h-full p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-300 transition-all duration-300 flex flex-col relative overflow-hidden"
+            className="h-full p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-rose-500/10 hover:border-rose-300 transition-all duration-300 flex flex-col relative overflow-hidden"
         >
             <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${color} mb-6 group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
                 <Icon size={28} />
             </div>
 
-            <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-amber-600 transition-colors">{title}</h3>
+            <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-rose-600 transition-colors">{title}</h3>
             <p className="text-slate-500 text-sm mb-6 flex-1 leading-relaxed">{description}</p>
 
-            <div className="flex items-center text-sm font-semibold text-amber-600 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+            <div className="flex items-center text-sm font-semibold text-rose-600 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                 Get Started <ArrowRight size={16} className="ml-2" />
             </div>
 
-            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl group-hover:bg-amber-500/10 transition-all duration-500" />
+            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-rose-500/5 rounded-full blur-3xl group-hover:bg-rose-500/10 transition-all duration-500" />
         </motion.div>
     </Link>
 )
@@ -32,7 +32,7 @@ export default function Dashboard() {
         <div className="max-w-6xl mx-auto py-6">
             <div className="mb-12">
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">
-                    Welcome back, <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-yellow-500">Scholar!</span>
+                    Welcome back, <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-red-500">Scholar!</span>
                 </h1>
                 <p className="text-slate-500 text-lg max-w-2xl">
                     Ready to accelerate your learning? varied tools to help you master any subject.
@@ -45,7 +45,7 @@ export default function Dashboard() {
                     title="Topic Simplifier"
                     description="Get concise, easy-to-understand explanations for complex topics. Perfect for quick reviews or learning new concepts from scratch."
                     to="/dashboard/explain"
-                    color="bg-amber-100 text-amber-600"
+                    color="bg-rose-100 text-rose-600"
                     delay={0.1}
                 />
                 <FeatureCard
@@ -53,7 +53,7 @@ export default function Dashboard() {
                     title="PDF Summarizer"
                     description="Upload research papers or textbooks and get instant, intelligent summaries. Extract key points and save hours of reading."
                     to="/dashboard/summarize"
-                    color="bg-orange-100 text-orange-600"
+                    color="bg-red-100 text-red-600"
                     delay={0.2}
                 />
                 <FeatureCard
@@ -61,7 +61,7 @@ export default function Dashboard() {
                     title="Quiz Generator"
                     description="Test your mastery. Generate custom quizzes from any text or topic to reinforce your knowledge and identify gaps."
                     to="/dashboard/quiz"
-                    color="bg-yellow-100 text-yellow-600"
+                    color="bg-rose-100 text-rose-600"
                     delay={0.3}
                 />
                 <FeatureCard
@@ -69,7 +69,7 @@ export default function Dashboard() {
                     title="Flashcard Creator"
                     description="Turn your notes into digital flashcards for effective spaced repetition. The optimal way to memorize terms and definitions."
                     to="/dashboard/flashcards"
-                    color="bg-amber-100 text-amber-600"
+                    color="bg-rose-100 text-rose-600"
                     delay={0.4}
                 />
             </div>

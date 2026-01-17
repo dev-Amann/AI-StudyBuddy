@@ -14,9 +14,9 @@ const Footer = () => {
                         <p className="text-slate-500 mt-2 text-sm">Empowering students with AI.</p>
                     </div>
                     <div className="flex space-x-8">
-                        <a href="/privacy" className="text-slate-500 hover:text-amber-600 transition-colors">Privacy Policy</a>
-                        <a href="/terms" className="text-slate-500 hover:text-amber-600 transition-colors">Terms of Service</a>
-                        <a href="/contact" className="text-slate-500 hover:text-amber-600 transition-colors">Contact</a>
+                        <a href="/privacy" className="text-slate-500 hover:text-rose-600 transition-colors">Privacy Policy</a>
+                        <a href="/terms" className="text-slate-500 hover:text-rose-600 transition-colors">Terms of Service</a>
+                        <a href="/contact" className="text-slate-500 hover:text-rose-600 transition-colors">Contact</a>
                     </div>
                 </div>
                 <div className="mt-8 text-center text-slate-400 text-sm">

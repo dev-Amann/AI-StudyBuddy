@@ -53,7 +53,7 @@ export default function FlashcardsPage() {
         <div className="max-w-3xl mx-auto space-y-8">
             <div className="space-y-2">
                 <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-3">
-                    <Brain className="text-amber-500" />
+                    <Brain className="text-rose-500" />
                     Flashcard Creator
                 </h1>
                 <p className="text-slate-500">Master terminology with auto-generated flashcards.</p>
@@ -66,9 +66,9 @@ export default function FlashcardsPage() {
                         value={topic}
                         onChange={(e) => setTopic(e.target.value)}
                         placeholder="Subject (e.g. Spanish Vocabulary, React Hooks)"
-                        className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500/50 shadow-sm placeholder-slate-400"
+                        className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500/50 shadow-sm placeholder-slate-400"
                     />
-                    <button type="submit" disabled={loading || !topic} className="btn-primary from-amber-500 to-orange-500">
+                    <button type="submit" disabled={loading || !topic} className="btn-primary from-rose-500 to-red-500">
                         {loading ? <Loader2 className="animate-spin" /> : "Create Cards"}
                     </button>
                 </form>
@@ -86,7 +86,7 @@ export default function FlashcardsPage() {
                         >
                             {/* Front */}
                             <div className="absolute w-full h-full backface-hidden bg-white border-2 border-slate-200 rounded-3xl flex flex-col items-center justify-center p-8 text-center shadow-2xl shadow-slate-200">
-                                <span className="text-amber-500 text-sm font-bold uppercase tracking-wider mb-4">Term</span>
+                                <span className="text-rose-500 text-sm font-bold uppercase tracking-wider mb-4">Term</span>
                                 <h3 className="text-3xl font-bold text-slate-900">{cards[currentIndex].front}</h3>
                                 <div className="absolute bottom-6 right-6 text-slate-400 flex items-center gap-2 text-sm">
                                     <RotateCw size={16} /> Click to flip
@@ -95,10 +95,10 @@ export default function FlashcardsPage() {
 
                             {/* Back */}
                             <div
-                                className="absolute w-full h-full backface-hidden bg-amber-50 border-2 border-amber-200 rounded-3xl flex flex-col items-center justify-center p-8 text-center shadow-2xl backdrop-blur-xl"
+                                className="absolute w-full h-full backface-hidden bg-rose-50 border-2 border-rose-200 rounded-3xl flex flex-col items-center justify-center p-8 text-center shadow-2xl backdrop-blur-xl"
                                 style={{ transform: "rotateY(180deg)" }}
                             >
-                                <span className="text-amber-600 text-sm font-bold uppercase tracking-wider mb-4">Definition</span>
+                                <span className="text-rose-600 text-sm font-bold uppercase tracking-wider mb-4">Definition</span>
                                 <p className="text-xl text-slate-800 leading-relaxed">{cards[currentIndex].back}</p>
                             </div>
                         </motion.div>
@@ -109,7 +109,7 @@ export default function FlashcardsPage() {
                         <button
                             onClick={handlePrev}
                             disabled={currentIndex === 0}
-                            className="p-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-30 transition-colors shadow-sm"
+                            className="p-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-stone-50 disabled:opacity-30 transition-colors shadow-sm"
                         >
                             <ChevronLeft size={24} />
                         </button>
@@ -119,7 +119,7 @@ export default function FlashcardsPage() {
                         <button
                             onClick={handleNext}
                             disabled={currentIndex === cards.length - 1}
-                            className="p-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 disabled:opacity-30 transition-colors shadow-sm"
+                            className="p-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-stone-50 disabled:opacity-30 transition-colors shadow-sm"
                         >
                             <ChevronRight size={24} />
                         </button>
