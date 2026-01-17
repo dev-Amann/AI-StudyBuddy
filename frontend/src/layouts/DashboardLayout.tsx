@@ -1,6 +1,6 @@
 import { UserButton, useUser, useClerk } from '@clerk/clerk-react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import { BookOpen, Brain, FileText, FlaskConical, LayoutDashboard, MessageSquare, History, LogOut } from 'lucide-react'
+import { BookOpen, Brain, FileText, FlaskConical, LayoutDashboard, Timer, LogOut } from 'lucide-react'
 import clsx from 'clsx'
 
 const SidebarItem = ({ icon: Icon, label, to, active }: any) => (
@@ -29,7 +29,7 @@ export default function DashboardLayout() {
         { icon: FileText, label: 'PDF Summarizer', to: '/dashboard/summarize' },
         { icon: FlaskConical, label: 'Quiz Generator', to: '/dashboard/quiz' },
         { icon: Brain, label: 'Flashcards', to: '/dashboard/flashcards' },
-        { icon: MessageSquare, label: 'AI Tutor', to: '/dashboard/chat' },
+        { icon: Timer, label: 'Pomodoro', to: '/dashboard/pomodoro' },
     ]
 
     return (

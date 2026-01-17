@@ -6,7 +6,7 @@ import ExplainPage from './pages/ExplainPage'
 import SummarizePage from './pages/SummarizePage'
 import QuizPage from './pages/QuizPage'
 import FlashcardsPage from './pages/FlashcardsPage'
-import ChatPage from './pages/ChatPage'
+import PomodoroPage from './pages/PomodoroPage'
 import LandingPage from './pages/LandingPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
@@ -50,7 +50,7 @@ function App() {
                 <Route path="summarize" element={<SummarizePage />} />
                 <Route path="quiz" element={<QuizPage />} />
                 <Route path="flashcards" element={<FlashcardsPage />} />
-                <Route path="chat" element={<ChatPage />} />
+                <Route path="pomodoro" element={<PomodoroPage />} />
             </Route>
 
             {/* Catch all - redirect to home */}

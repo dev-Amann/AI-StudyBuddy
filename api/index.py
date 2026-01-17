@@ -5,7 +5,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '../backend'))
 
 from fastapi import FastAPI
-from app.routes import explain, summarize, quiz, flashcards, chat
+from app.routes import explain, summarize, quiz, flashcards
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="AI Study Buddy API", root_path="/api")
@@ -28,4 +28,3 @@ app.include_router(explain.router, prefix="/explain", tags=["Explain"])
 app.include_router(summarize.router, prefix="/summarize", tags=["Summarize"])
 app.include_router(quiz.router, prefix="/quiz", tags=["Quiz"])
 app.include_router(flashcards.router, prefix="/flashcards", tags=["Flashcards"])
-app.include_router(chat.router, prefix="/chat", tags=["Chat"])

@@ -1,10 +1,10 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from app.config import settings
+import certifi
 
 client = AsyncIOMotorClient(
     settings.MONGODB_URI,
-    tls=True,
-    tlsAllowInvalidCertificates=True
+    tlsCAFile=certifi.where()
 )
 db = client.study_buddy_db
 

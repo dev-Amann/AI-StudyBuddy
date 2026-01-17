@@ -12,3 +12,4 @@ pymongo
 email-validator
 pypdf2
 python-multipart
+certifi
